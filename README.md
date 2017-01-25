@@ -36,7 +36,9 @@ First go to Apps > Call Flows > + to create:
        Name: Day/Night Mode
        Extension: 180
        Feature Code: *180
+       Sound: ivr/ivr-disabled.wav
        Destination: (Ring Group, Queue, Day Mode IVR, or Extension here)
+       Sound: ivr/ivr-enabled.wav
        Alternate Destination: Night Mode IVR
        SAVE
 
