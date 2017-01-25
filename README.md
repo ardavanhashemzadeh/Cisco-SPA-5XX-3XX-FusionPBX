@@ -13,18 +13,41 @@ Works without additional configuraiton between registered extensions in same dom
 
 Works, configure a Gateway (SIP Trunk) and an Inbound route which matches an incoming number and sends it somewhere
 
-## Call Outbound + CID
+## Call Outbound/CID
 
 Works, configure a Gateway, Outbound Route to match 10 digits and prefix 1, as well as 911,411, 311 etc. Configure outbound caller ID on per extension basis in extension settings
 
 ## Speed dial + BLF
 
 Works, use something like this in Cisco XML config
-
+    
+    <Line_Enable_2_ ua="na">No</Line_Enable_2_>
     <Extension_2_ ua="na">Disabled</Extension_2_> <!-- options: 1/2/3/4/5/6/7/8/9/10/11/12/Disabled -->
     <Short_Name_2_ ua="na">Speed dial + BLF</Short_Name_2_>
     <Share_Call_Appearance_2_ ua="na">private</Share_Call_Appearance_2_> <!-- options: private/shared -->
     <Extended_Function_2_ ua="na">fnc=sd+blf;sub=101@mydomain.mysite.com</Extended_Function_2_>
+
+## Call Flow + BLF (For Example: Day/Night Mode Toggle Button)
+
+Works
+
+First go to Apps > Call Flows > + to create.
+       
+       Name: Day/Night Mode
+       Extension: 180
+       Feature Code: *180
+       Destination: (Ring Group, Queue, Day Mode IVR, or Extension here)
+       Alternate Destination: Night Mode IVR
+       SAVE
+
+Cisco XML config example:
+
+      <!-- Line Key 3 -->
+      <Line_Enable_3_ ua="na">No</Line_Enable_3_>
+      <Extension_3_ ua="na">Disabled</Extension_3_> <!-- options: 1/2/3/4/5/6/7/8/9/10/11/12/Disabled -->
+      <Short_Name_3_ ua="na"></Short_Name_3_>
+      <Share_Call_Appearance_3_ ua="na">private</Share_Call_Appearance_3_> <!-- options: private/shared -->
+      <Extended_Function_3_ ua="na">fnc=sd+blf;sub=*180@mydomain.mysite.com</Extended_Function_3_>
 
 ## Voicemail to Email
 
