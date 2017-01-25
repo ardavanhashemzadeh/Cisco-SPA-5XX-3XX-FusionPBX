@@ -30,6 +30,12 @@ Works, use something like this in Cisco XML config
 
 Works, configure email SMTP settings in Advanced > Default Settings > Email. Then configure voicemail to email address in extension settings
 
+## IVR
+
+Works, go to Dialplan > Dialplan Manager > Recordings. Change "pin_number=1928405" to your own pin. Dial \*732, enter your password, then enter recording ID numberlike 100.
+
+When finished, go to Apps > IVR Menu > +. Setup the new IVR and you can use the recording made earlier.
+
 ## Sample Cisco SPA514G spa514G.xml located in /xml/customer1/
 
     <flat-profile>
