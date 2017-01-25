@@ -31,7 +31,7 @@ Works, use something like this in Cisco XML config
 
 Works
 
-First go to Apps > Call Flows > + to create.
+First go to Apps > Call Flows > + to create:
        
        Name: Day/Night Mode
        Extension: 180
