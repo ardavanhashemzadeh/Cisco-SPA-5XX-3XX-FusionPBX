@@ -17,6 +17,13 @@ Works, configure a Gateway (SIP Trunk) and an Inbound route which matches an inc
 
 Works, configure a Gateway, Outbound Route to match 10 digits and prefix 1, as well as 911,411, 311 etc. Configure outbound caller ID on per extension basis in extension settings
 
+## Conferencing
+
+Works both from the phone (ad-hoc) and also using the FusionPBX Conference Center app which can be used to setup moderator permissions, join announcements, etc. To set up Conference Center:
+    
+    Create Conference Center: Apps > Conference Center > +
+    Create Conference Room: Apps > Conference Center > Rooms > +
+
 ## Speed dial + BLF
 
 Works, use something like this in Cisco XML config
