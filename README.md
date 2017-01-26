@@ -51,6 +51,17 @@ Cisco XML config example:
       <Share_Call_Appearance_3_ ua="na">private</Share_Call_Appearance_3_> <!-- options: private/shared -->
       <Extended_Function_3_ ua="na">fnc=sd+blf;sub=*180@mydomain.mysite.com</Extended_Function_3_>
 
+## Call Park + BLF for Slots
+
+Works. There are a few different ways to use Call Park. In this example each phone will only have a line key for Slot 1 and Slot 2. To park a call, simply press the Slot 1/2 line key while on a call. The current call will be parked to that slot and the line key will be flashing red until the call is picked up. To pick up the call from another extension, press the flashing Slot 1/2 line key.
+
+Cisco XML config example:
+
+      <Extension_3_ ua="na">Disabled</Extension_3_> <!-- options: 1/2/3/4/5/6/7/8/9/10/11/12/Disabled -->
+      <Short_Name_3_ ua="na">Slot 1</Short_Name_3_>
+      <Share_Call_Appearance_3_ ua="na">private</Share_Call_Appearance_3_> <!-- options: private/shared -->
+      <Extended_Function_3_ ua="na">fnc=sd+blf+cp;sub=park+*5901@nationwide.locklinnetworks.com</Extended_Function_3_>
+
 ## Voicemail to Email
 
 Works, configure email SMTP settings in Advanced > Default Settings > Email. Then configure voicemail to email address in extension settings
