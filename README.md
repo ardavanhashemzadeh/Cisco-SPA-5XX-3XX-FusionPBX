@@ -13,6 +13,8 @@ Works without additional configuraiton between registered extensions in same dom
 
 Works, configure a Gateway (SIP Trunk) and an Inbound route which matches an incoming number and sends it somewhere
 
+Also, make sure you have set your SIP provider to send calls to your-ip:5080 which is the SIP server for external calls
+
 ## Call Outbound/CID
 
 Works, configure a Gateway, Outbound Route to match 10 digits and prefix 1, as well as 911,411, 311 etc. Configure outbound caller ID on per extension basis in extension settings
